@@ -1,0 +1,63 @@
+<mxfile host="drawio-plugin" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" modified="2026-07-22T22:23:29.703Z" etag="TWCL-DfqPvuEqK95TKAQ" version="23.1.5" type="embed">
+  <diagram name="Кэширование" id="J188WAX_t0HQoUdHhu1B">
+    <mxGraphModel dx="1278" dy="683" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="v1-app" target="3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="v1-app" value="pymongo-api" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="70" y="240" width="170" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="GK9vtCAuFpbILDfIm6nu-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" parent="1" source="v1-router" target="GK9vtCAuFpbILDfIm6nu-8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GK9vtCAuFpbILDfIm6nu-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" parent="1" source="v1-router" target="GK9vtCAuFpbILDfIm6nu-9" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="v1-router" value="mongodb-router" style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="350" y="240" width="150" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="v1-config" value="configSrv&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;MongoDB Config Server" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;fontSize=15;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="640" y="225" width="180" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="v1-e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" parent="1" source="v1-app" target="v1-router" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="v1-e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" parent="1" source="v1-router" target="v1-config" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1jbf7VS-QDTx9bFKDJIh-2" value="shard1-3&lt;br/&gt;MongoDB Secondary" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;fontSize=16;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="210" y="580" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="1jbf7VS-QDTx9bFKDJIh-4" value="shard1-2&lt;br/&gt;MongoDB Secondary" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;fontSize=16;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="210" y="530" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="1jbf7VS-QDTx9bFKDJIh-5" value="shard1-1&lt;br/&gt;MongoDB Primary" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;fontSize=16;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="210" y="480" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="1jbf7VS-QDTx9bFKDJIh-6" value="shard2-3&lt;br/&gt;MongoDB Secondary" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;fontSize=16;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="480" y="580" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="1jbf7VS-QDTx9bFKDJIh-7" value="shard2-2&lt;br/&gt;MongoDB Secondary" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;fontSize=16;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="480" y="530" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="1jbf7VS-QDTx9bFKDJIh-8" value="shard2-1&lt;br/&gt;MongoDB Primary" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;fontSize=16;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="480" y="480" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GK9vtCAuFpbILDfIm6nu-8" value="MongoDB Replica Set shard1" style="swimlane;whiteSpace=wrap;html=1;container=0;" parent="1" vertex="1">
+          <mxGeometry x="180" y="440" width="245" height="260" as="geometry">
+            <mxRectangle x="225" y="440" width="160" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GK9vtCAuFpbILDfIm6nu-9" value="MongoDB Replica Set shard2" style="swimlane;whiteSpace=wrap;html=1;container=0;" parent="1" vertex="1">
+          <mxGeometry x="445" y="440" width="245" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="&lt;b&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;Redis&lt;/font&gt;&lt;/b&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="10" y="360" width="150" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
