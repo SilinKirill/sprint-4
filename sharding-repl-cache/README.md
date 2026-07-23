@@ -5,10 +5,10 @@
 Перейдите в каталог проекта
 
 ```shell
-cd mongo-sharding-repl
+cd sharding-repl-cache
 ```
 
-Запускаем MongoDB и приложение
+Запускаем MongoDB, Redis и приложение
 
 ```shell
 docker compose up -d
@@ -106,6 +106,24 @@ use somedb
 db.helloDoc.countDocuments()
 EOF
 ```
+
+### Проверяем работу Redis
+
+```shell
+docker compose exec -T redis redis-cli ping
+```
+
+Ожидаемый результат: `PONG`
+
+### Проверяем кеширование
+
+Выполните запрос несколько раз
+
+```shell
+curl -o /dev/null -s -w '%{time_total}\n' http://localhost:8080/helloDoc/users
+```
+
+Первый запрос получает данные из MongoDB и сохраняет результат в Redis. Второй и последующие запросы получают данные из кеша и должны выполняться менее чем за `0.1` секунды.
 
 ### Если вы запускаете проект на локальной машине
 
