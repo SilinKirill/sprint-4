@@ -291,9 +291,11 @@ services:
 
   pymongo-api:
     container_name: pymongo-api
-    build:
-      context: api_app
-      dockerfile: Dockerfile
+#    Для локальной сборки приложения из исходников:
+#    build:
+#      context: api_app
+#      dockerfile: Dockerfile
+    image: kazhem/pymongo_api:1.0.0
     restart: always
     depends_on:
       - mongos_router

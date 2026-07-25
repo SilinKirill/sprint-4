@@ -8,6 +8,16 @@
 cd sharding-repl-cache
 ```
 
+### Запуск API-приложения
+
+По умолчанию API запускается из готового образа:
+
+```yaml
+image: kazhem/pymongo_api:1.0.0
+```
+
+При необходимости локальной сборки закомментируйте `image` и раскомментируйте блок `build` в `compose.yaml`.
+
 Запускаем MongoDB, Redis и приложение
 
 ```shell
