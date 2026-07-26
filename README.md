@@ -1,35 +1,62 @@
-# pymongo-api
+# Спринт 4. Шардирование, репликация и кеширование
 
-## Как запустить
+В проекте реализованы:
 
-Запускаем mongodb и приложение
+- шардирование MongoDB;
+- репликация шардов;
+- кеширование запросов в Redis;
+- архитектурные решения по масштабированию MongoDB и миграции данных в Cassandra.
 
-```shell
-docker compose up -d
+## Материалы для проверки
+
+### Задания 1–6
+
+Финальная реализация заданий 2–4 находится в каталоге:
+
+- [sharding-repl-cache](./sharding-repl-cache)
+
+Итоговая архитектурная схема по заданиям 1, 5 и 6:
+
+- [docs/final/architecture.drawio](./docs/final/architecture.drawio)
+
+### Задания 7–10
+
+Единый архитектурный документ:
+
+- [docs/final/architecture-tasks-7-10.md](./docs/final/architecture-tasks-7-10.md)
+
+## Запуск финального стенда
+
+Полная инструкция по запуску и проверке стенда:
+
+- [sharding-repl-cache/README.md](./sharding-repl-cache/README.md)
+
+## Структура репозитория
+
+```text
+.
+├── mongo-sharding/
+├── mongo-sharding-repl/
+├── sharding-repl-cache/
+├── docs/
+│   ├── task1/
+│   ├── task5/
+│   ├── task6/
+│   ├── task7/
+│   ├── task8/
+│   ├── task9/
+│   ├── task10/
+│   └── final/
+│       ├── architecture.drawio
+│       └── architecture-tasks-7-10.md
+└── README.md
 ```
 
-Заполняем mongodb данными
+Каталоги содержат последовательные этапы выполнения работы:
 
-```shell
-./scripts/mongo-init.sh
-```
-
-## Как проверить
-
-### Если вы запускаете проект на локальной машине
-
-Откройте в браузере http://localhost:8080
-
-### Если вы запускаете проект на предоставленной виртуальной машине
-
-Узнать белый ip виртуальной машины
-
-```shell
-curl --silent http://ifconfig.me
-```
-
-Откройте в браузере http://<ip виртуальной машины>:8080
-
-## Доступные эндпоинты
-
-Список доступных эндпоинтов, swagger http://<ip виртуальной машины>:8080/docs
+- `mongo-sharding` — реализация шардирования MongoDB;
+- `mongo-sharding-repl` — добавление репликации;
+- `sharding-repl-cache` — финальная реализация с шардированием, репликацией и Redis;
+- `docs/task1`, `docs/task5`, `docs/task6` — схемы отдельных этапов;
+- `docs/task7`, `docs/task8`, `docs/task9`, `docs/task10` — отдельные архитектурные задания;
+- `docs/final` — итоговые материалы для проверки.
